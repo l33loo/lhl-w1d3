@@ -8,27 +8,38 @@ multiple numbers to represent all the places in the string that it shows up.
 
 function countLetters(str) {
 
-  /* Create an array that contains all the characters in string,
-  in lowercase, including whitespace.*/
+  // Convert the string to lowercase.
   str = str.toLowerCase();
 
+  // Create an object that will store the string characters and their indeces.
   var charIdxObj = {};
 
-  // Loop through the letter array and add each element as a key in the object.
+  // Loop through the string characters.
   for (var i = 0; i < str.length; i++) {
+
+    // Create an array that stores the indeces of a given letter.
     var charIdxArr = [];
-    /* If the key already exists, update the value that represents the number
-    of times the character appears in the letter array (or string).*/
-    if (charIdxObj[str[i]] === undefined) {
-      for (var j = i; j < str.length - i; j++) {
-        if (str[j] === str[i]) {
+
+    /* If the object property doesn't exist yet, compare the character to
+    itself and to each subsequent character. */
+    if (!charIdxObj[str[i]]) {
+      for (var j = i; j < str.length; j++) {
+
+        /* If both characters match, add to the index array the index of the character
+        to which the initial character is compared. */
+        if (str[i] === str[j]) {
           charIdxArr.push(str.indexOf(str[j], j));
         }
       }
+
+      // Create the property for the letter and assign it's value to be the index array.
       charIdxObj[str[i]] = charIdxArr;
     }
   }
+
+  // Delete the object property that represents the space character.
   delete charIdxObj[" "];
+
   return charIdxObj;
 }
 

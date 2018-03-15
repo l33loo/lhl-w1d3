@@ -43,7 +43,7 @@ var printPlaylists = function () {
         + value.tracks.length + " tracks";
       console.log(playlist);
     });
-}
+};
 
 //printPlaylists();
 
@@ -60,7 +60,7 @@ var printTracks = function () {
       + trackPath.artist + " (" + trackPath.album + ")";
     console.log(trackPath);
   });
-}
+};
 
 // printTracks();
 
@@ -81,7 +81,7 @@ var printPlaylist = function (playlistId) {
       + trackPath.artist + " (" + trackPath.album + ")";
     console.log(track);
   }
-}
+};
 
 //printPlaylist("p02");
 
@@ -93,7 +93,7 @@ var addTrackToPlaylist = function (trackId, playlistId) {
   var plPath = library.playlists[playlistId];
     plPath.tracks.push(trackPath.id);
   return plPath.tracks;
-}
+};
 
 //console.log(addTrackToPlaylist("t01", "p02"));
 
@@ -103,7 +103,7 @@ var addTrackToPlaylist = function (trackId, playlistId) {
 
 var uid = function() {
   return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
-}
+};
 
 // console.log(uid());
 
@@ -144,11 +144,11 @@ console.log(addPlaylist("The Summit"));
 
 
 // STRETCH:
-// given a query string string, prints a list of tracks
+// given a query string, prints a list of tracks
 // where the name, artist or album contains the query string (case insensitive)
 // tip: use "string".search("tri")
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/search
 
 var printSearchResults = function(query) {
 
-}
+};

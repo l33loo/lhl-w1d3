@@ -43,7 +43,7 @@ var printPlaylists = function () {
     });
 };
 
-printPlaylists();
+// printPlaylists();
 
 
 // prints a list of all tracks, in the form:
@@ -54,9 +54,9 @@ printPlaylists();
 var printTracks = function () {
   Object.keys(library.tracks).map(function(objectKey) {
     var trackPath = library.tracks[objectKey];
-    var trackPath = trackPath.id + ": " + trackPath.name + " by "
+    var track = trackPath.id + ": " + trackPath.name + " by "
       + trackPath.artist + " (" + trackPath.album + ")";
-    console.log(trackPath);
+    console.log(track);
   });
 };
 
@@ -81,7 +81,7 @@ var printPlaylist = function (playlistId) {
   }
 };
 
-printPlaylist("p02");
+printPlaylist("p01");
 
 
 // adds an existing track to an existing playlist
@@ -120,6 +120,7 @@ var addTrack = function (name, artist, album) {
 };
 
 console.log(addTrack("coding", "lila", "bootcamp"));
+console.log(library.tracks);
 
 
 // adds a playlist to the library
@@ -137,6 +138,7 @@ var addPlaylist = function (name) {
 };
 
 console.log(addPlaylist("The Summit"));
+console.log(library.playlists);
 
 
 // STRETCH:

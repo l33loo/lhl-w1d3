@@ -23,8 +23,6 @@ var library = {
              }
 }
 
-// console.log(library.playlists.p02.tracks);
-
 
 // FUNCTIONS TO IMPLEMENT:
 
@@ -45,7 +43,7 @@ var printPlaylists = function () {
     });
 };
 
-//printPlaylists();
+printPlaylists();
 
 
 // prints a list of all tracks, in the form:
@@ -62,7 +60,7 @@ var printTracks = function () {
   });
 };
 
-// printTracks();
+printTracks();
 
 
 // prints a list of tracks for a given playlist, in the form:
@@ -83,7 +81,7 @@ var printPlaylist = function (playlistId) {
   }
 };
 
-//printPlaylist("p02");
+printPlaylist("p02");
 
 
 // adds an existing track to an existing playlist
@@ -95,7 +93,7 @@ var addTrackToPlaylist = function (trackId, playlistId) {
   return plPath.tracks;
 };
 
-//console.log(addTrackToPlaylist("t01", "p02"));
+console.log(addTrackToPlaylist("t01", "p02"));
 
 
 // generates a unique id
@@ -104,8 +102,6 @@ var addTrackToPlaylist = function (trackId, playlistId) {
 var uid = function() {
   return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
 };
-
-// console.log(uid());
 
 
 // adds a track to the library
@@ -123,7 +119,7 @@ var addTrack = function (name, artist, album) {
   return trackPath;
 };
 
-// console.log(addTrack("coding", "lila", "bootcamp"));
+console.log(addTrack("coding", "lila", "bootcamp"));
 
 
 // adds a playlist to the library

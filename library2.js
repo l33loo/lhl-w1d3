@@ -28,11 +28,9 @@ var library = {
   printPlaylists: function() {
 
     // Loop through the playlists.
-    Object.keys(this.playlists).map(function(objectKey) {
-
-      var value = this.playlists[objectKey];
-      var playlist = `${value.id}: ${value.name} - ${value.tracks.length}
-        tracks`;
+    Object.keys(library.playlists).map(function(objectKey) {
+      var value = library.playlists[objectKey];
+      var playlist = `${value.id}: ${value.name} - ${value.tracks.length} tracks`;
       console.log(playlist);
     });
   },
@@ -44,8 +42,7 @@ var library = {
   printTracks: function() {
     Object.keys(library.tracks).map(function(objectKey) {
       var trackPath = library.tracks[objectKey];
-      var track = trackPath.id + ": " + trackPath.name + " by "
-        + trackPath.artist + " (" + trackPath.album + ")";
+      var track = `${trackPath.id}: ${trackPath.name} by ${trackPath.artist} (${trackPath.album})`;
       console.log(track);
     });
   },
@@ -62,8 +59,7 @@ var library = {
     console.log(playlist);
     for (var i = 0; i < plPath.tracks.length; i++) {
       let trackPath = this.tracks[plPath.tracks[i]];
-      var track = `${trackPath.id}: ${trackPath.name} by
-        ${trackPath.artist} (${trackPath.album})`;
+      var track = `${trackPath.id}: ${trackPath.name} by ${trackPath.artist} (${trackPath.album})`;
       return track;
     }
   },
@@ -112,15 +108,17 @@ var uid = function() {
 
 library.printPlaylists();
 
-// library.printTracks();
+library.printTracks();
 
-// library.printPlaylist("p02");
+library.printPlaylist("p01");
 
-// console.log(library.addTrackToPlaylist("t01", "p02"));
+console.log(library.addTrackToPlaylist("t01", "p02"));
 
-// console.log(library.addTrack("coding", "lila", "bootcamp"));
+console.log(library.addTrack("coding", "lila", "bootcamp"));
+console.log(library.tracks);
 
-// console.log(library.addPlaylist("The Summit"));
+console.log(library.addPlaylist("The Summit"));
+console.log(library.playlists);
 
 
 // STRETCH:
